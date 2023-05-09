@@ -15,7 +15,7 @@ public class OAuth2SecurityConfig {
         http
                 .authorizeExchange(exchanges ->
                         exchanges
-                                .pathMatchers("/","/error").permitAll()
+                                .pathMatchers("/", "/actuator/**", "/error").permitAll()
                                 .anyExchange().authenticated()
                 )
                 .oauth2Login(withDefaults());
